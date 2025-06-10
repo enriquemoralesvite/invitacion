@@ -1,7 +1,7 @@
 body {
   font-family: 'Arial', sans-serif;
   text-align: center;
-  margin-top: 100px;
+  margin: 100px 20px 0;
   background: linear-gradient(to bottom, #ffd6e8, #fff0f5);
   overflow: hidden;
 }
@@ -10,6 +10,7 @@ h1 {
   font-size: 2.8em;
   color: #d6336c;
   animation: latido 1.5s infinite;
+  padding: 0 10px;
 }
 
 @keyframes latido {
@@ -19,6 +20,8 @@ h1 {
 
 .buttons {
   margin-top: 30px;
+  position: relative;
+  height: 200px; /* para contener el botón que se mueve */
 }
 
 button {
@@ -29,17 +32,20 @@ button {
   border-radius: 10px;
   cursor: pointer;
   transition: 0.3s;
+  max-width: 90vw;
 }
 
 .yes {
   background-color: #28a745;
   color: white;
+  z-index: 2;
 }
 
 .no {
   background-color: #dc3545;
   color: white;
   position: absolute;
+  z-index: 2;
 }
 
 .emoji {
@@ -57,6 +63,7 @@ button {
   height: 100%;
   pointer-events: none;
   overflow: hidden;
+  z-index: 1;
 }
 
 .corazon {
@@ -74,5 +81,25 @@ button {
   100% {
     transform: translateY(-10vh) scale(1.5);
     opacity: 0;
+  }
+}
+
+/* 📱 Estilos para pantallas pequeñas (celulares) */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2em;
+  }
+
+  button {
+    padding: 12px 24px;
+    font-size: 1em;
+  }
+
+  .emoji {
+    font-size: 3.5em;
+  }
+
+  .buttons {
+    height: 250px;
   }
 }
