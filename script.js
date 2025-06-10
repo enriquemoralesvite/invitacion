@@ -1,5 +1,6 @@
 function mostrarAmor() {
   document.getElementById('emoji').style.display = 'block';
+  document.getElementById('musica').play(); // Activar música tras clic
 }
 
 function moverBoton() {
